@@ -20,7 +20,8 @@ module.exports = {
         try {
             const updateUser = await FormService.modify({
                 id: req.params.id,
-                form: req.body.form
+                // form: req.body.form,
+                answer: req.body.answer
             });
             return response.dispatch("Form Created Successfully", {updateUser}, res, 201);
         } catch (error) {

@@ -4,12 +4,15 @@ const mongoose = require('mongoose');
 const fields = {
     form : {
         type : Array,
-        required: true
+    },
+    answer: {
+        type: Array,
+        required: false
     }
 }
 
 // wrap fields with mongoose schema
-const schema = mongoose.Schema(fields, {timestamps: true})
+const schema = mongoose.Schema(fields, {timestamps: true});
 
 // wrap schema with mongoose model
 const model = mongoose.model('Form', schema);

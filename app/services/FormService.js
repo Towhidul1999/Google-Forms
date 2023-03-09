@@ -8,15 +8,13 @@ async function add (data) {
 
 async function modify (data) {
     const updateForm = await Form.findById(data.id);
-    const meow = updateForm.form;
 
-    updateForm.form = data.form
+    updateForm.answer = data.answer
 
     await updateForm.save();
 
     return  {
-        updateForm,
-        meow
+        updateForm
     }
 }
 
